@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"/>
+  <title>公文自動填寫 設定</title>
+  <style>
+    body { font-family: system-ui,sans-serif; margin: 20px; }
+    label { display:block; margin: 10px 0 6px; font-weight: 600; }
+    input[type="text"], input[type="password"] { width: 360px; padding: 8px; }
+    .hint { font-size: 12px; color:#555; }
+  </style>
+</head>
+<body>
+  <h1>公文自動填寫 設定</h1>
+  <label for="pin">憑證 PIN 碼</label>
+  <input id="pin" type="password" placeholder="輸入一次"/>
+  <label for="comment">預設意見</label>
+  <input id="comment" type="text" placeholder="文存參"/>
+  <p class="hint">※ 僅自動填入，不會自動按「確定」。</p>
+  <button id="save">儲存設定</button>
+  <script src="options.js"></script>
+</body>
+</html>
