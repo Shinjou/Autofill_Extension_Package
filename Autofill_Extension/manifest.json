@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "公文自動填寫-台東縣",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "自動填寫 PIN + 意見。",
   "permissions": [
     "storage"

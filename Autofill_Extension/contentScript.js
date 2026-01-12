@@ -26,6 +26,8 @@
 
   function setNativeValue(input, value) {
     if (!input) return false;
+    // Do not overwrite if there is already a value
+    if (input.value && input.value.trim() !== "") return false;
     try {
       input.value = value;
       // Simulate typing for frameworks that listen to key events
@@ -48,6 +50,10 @@
         for (const key in CKEDITOR.instances) {
           const inst = CKEDITOR.instances[key];
           if (!inst) continue;
+          // Do not overwrite if there is already content (strip tags to check text)
+          const currentData = inst.getData();
+          if (currentData && currentData.replace(/<[^>]+>/g, "").trim() !== "") continue;
+          
           inst.setData(text);
           const ta = inst.element?.$;
           if (ta && ta.tagName === 'TEXTAREA') {
@@ -64,7 +70,10 @@
     return false;
   }
 
-  function fillContentEditableIfPresent(doc, text) {
+  functi// Do not overwrite if there is already content
+        if (editable.textContent && editable.textContent.trim() !== "") return false;
+
+        on fillContentEditableIfPresent(doc, text) {
     try {
       const editable = doc.querySelector('[contenteditable="true"], .cke_editable');
       if (editable) {
