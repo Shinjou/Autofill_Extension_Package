@@ -70,13 +70,13 @@
     return false;
   }
 
-  functi// Do not overwrite if there is already content
-        if (editable.textContent && editable.textContent.trim() !== "") return false;
-
-        on fillContentEditableIfPresent(doc, text) {
+  function fillContentEditableIfPresent(doc, text) {
     try {
       const editable = doc.querySelector('[contenteditable="true"], .cke_editable');
       if (editable) {
+        // Do not overwrite if there is already content
+        if (editable.textContent && editable.textContent.trim() !== "") return false;
+
         editable.focus();
         editable.innerHTML = '';
         editable.textContent = text;
